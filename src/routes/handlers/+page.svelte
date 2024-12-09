@@ -1,7 +1,9 @@
 <script>
+	import { navigating } from '$app/stores';
 	import { enhance } from '$app/forms';
 	import { fly, slide } from 'svelte/transition';
 	const { data = $bindable(), form } = $props();
+	let chain = $state('');
 	let loading = $state(false);
 	let deleting = $state([]);
 </script>
