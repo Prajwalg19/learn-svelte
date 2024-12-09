@@ -20,16 +20,19 @@ export function createTodo(userid, description) {
     }
 	const todos = db.get(userid);
 
+    console.log("todos", todos)
+    console.log("description", description)
     if(todos.find((todo)=> todo.description === description)){
         throw new Error("Description already exists");
     }
 
-	todos.push({
+    const todo = {
 		id: crypto.randomUUID(),
 		description,
 		done: false
-	});
-
+	}
+	todos.push(todo);
+    return {id : todo.id}
 }
 
 export function deleteTodo(userid, todoid) {

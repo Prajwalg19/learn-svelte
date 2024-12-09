@@ -2,7 +2,9 @@
 	/**@type {number}*/
 	let diceNum = $state();
 	const rollDice = async () => {
-		const number = await fetch('/dice/roll');
+		const number = await fetch('/dice/roll', {
+			method: 'GET'
+		});
 		diceNum = await number.json();
 	};
 </script>
