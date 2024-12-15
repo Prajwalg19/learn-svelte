@@ -1,1 +1,5 @@
-<p>This is page A</p>
+<script>
+	const { data } = $props();
+</script>
+
+<p>{data.message}</p>

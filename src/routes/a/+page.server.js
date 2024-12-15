@@ -1,5 +1,7 @@
-import {redirect} from "@sveltejs/kit";
+export async function load({fetch}){
+    const response = await fetch("/a");
+    return {
+        message: await response.text()
+    };
 
-export async function load(){
-    redirect(307, '/b')
 }
